@@ -1,0 +1,184 @@
+package com.aceprogrammer.basics;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+
+enum WhoseTurn
+{
+	PLAYER, COMPUTER;
+}
+
+public class TicTacToe
+{
+	
+	// this will be our board which is a 2d 3 * 3 matrix
+	char[][] board;
+	
+	//this will keep track of the available moves
+	int moves[];
+	
+	static int rows = 3;
+	static int columns = 3;
+	static int tmove = 9;
+	
+	WhoseTurn whoseTurn = WhoseTurn.PLAYER;
+	
+	Random random = new Random();
+	
+	public static void main(String args[]) {
+		
+		
+		
+		TicTacToe ticTacToe = new TicTacToe(rows, columns, tmove);		
+		ticTacToe.play();
+	}
+	
+	
+		
+
+	public TicTacToe(int rows, int columns, int nMoves) {
+		board = new char[rows] [columns];
+		
+		moves = new int[nMoves];
+		
+		
+		// initialize the board with empty character
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < columns; j++) {
+				board[i][j] = ' ';
+			}
+		}
+		
+		for (int i = 0; i < moves.length; i++) {
+			moves[i] = i;
+		}
+		
+	}
+		
+	
+	
+	private void showBoard()
+	{
+		System.out.printf("\t %c \t | \t %c \t | \t %c \n\n ",board[0][0],
+                board[0][1], board[0][2] );
+		
+		System.out.printf("\t %c \t | \t %c \t | \t %c  \n\n",board[1][0],
+                board[1][1], board[1][2] );
+		
+		System.out.printf("\t %c \t | \t %c \t | \t %c  \n \n \n",board[2][0],
+                board[2][1], board[2][2] );
+	}
+	
+	private void showInstructions()
+	{
+		System.out.println("\t\t\t  Tic-Tac-Toe\n\n");
+		System.out.println("Choose a cell numbered from 1 to 9 as below"+
+            " and play\n\n");
+		System.out.println("\t 1 \t | \t 2 \t | \t 3  \n");
+		System.out.println("\n");
+		System.out.println("\t 4 \t | \t 5 \t | \t 6  \n");
+		System.out.println("\n");
+		System.out.println("\t 7 \t | \t 8 \t | \t 9  \n");
+		System.out.println("\n");
+	}
+	
+	// function to check who's the winner
+	private void declareWinner(WhoseTurn whoseTurn)
+	{
+		
+		if(whoseTurn == WhoseTurn.COMPUTER)
+		{
+			System.out.println("COMPUTER HAS WON");
+		}
+		else
+			System.out.println("PLAYER HAS WON");
+		
+	}
+	
+	// function to check whether rows are crossed
+	private boolean rowCrossed()
+	{
+		for (int i = 0; i < rows ; i++) {
+			if (board[i][0] == board[i][1] &&
+		            board[i][1] == board[i][2] && 
+		            board[i][0] != ' ')
+		            return (true);
+		}
+		
+		return(false);
+	}
+	
+	private boolean columnCrossed()
+	{
+		for (int i = 0; i < columns ; i++) {
+			if (board[0][i] == board[1][i] &&
+		            board[1][i] == board[2][i] && 
+		            board[0][i] != ' ')
+		            return (true);
+		}
+		
+		return(false);
+	}
+	
+	private boolean diagonalCrossed()
+	{
+		if (board[0][0] == board[1][1] &&
+		        board[1][1] == board[2][2] && 
+		        board[0][0] != ' ')
+		        return(true);
+		         
+		if (board[0][2] == board[1][1] &&
+				 board[1][1] == board[2][0] &&
+		         board[0][2] != ' ')
+		        return(true);
+		
+		return(false);
+	}
+	
+	
+	private boolean gameOver()
+	{
+		return(rowCrossed() || columnCrossed() || diagonalCrossed());
+	}
+	
+    private void play() {
+    	
+    	int movesPlayed = 0;
+    	
+    	
+    	try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in, arg1)))
+    	{
+    	// keep playing till game is over or it's a draw
+    	while (gameOver() == false && movesPlayed != tmove)
+    	{
+    	
+    		// check who's turn it is and play accordngly
+    		if(whoseTurn == WhoseTurn.COMPUTER)
+    		{
+    			
+    		}
+    		
+    		else
+    		if(whoseTurn == whoseTurn.PLAYER)
+    		{
+    			
+    			// showBoard first
+    			showBoard();
+    			
+    			//showInstructions
+    			showInstructions();
+    			
+    			// ask the player for placing his move as X
+    			
+    		}
+    	 	
+    	}
+		
+    	}
+    	catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,96 @@
+package com.aceprogrammer.basics;
+
+import java.util.Random;
+
+public class TicTacToe
+{
+	
+	// this will be our board which is a 2d 3 * 3 matrix
+	char[][] board;
+	
+	//this will keep track of the available moves
+	int moves[];
+	
+	Random random = new Random();
+	
+	public static void main(String args[]) {
+		
+		int rows = 3;
+		int columns = 3;
+		int moves = 9;
+		
+		TicTacToe ticTacToe = new TicTacToe(rows, columns, moves);
+		ticTacToe.showInstructions();
+		ticTacToe.showBoard();
+		ticTacToe.play();
+	}
+	
+	public enum WhoseTurn
+	{
+		PLAYER, COMPUTER;
+	}
+		
+
+	public TicTacToe(int rows, int columns, int nMoves) {
+		board = new char[rows] [columns];
+		
+		moves = new int[nMoves];
+		
+		
+		// initialize the board with empty character
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < columns; j++) {
+				board[i][j] = ' ';
+			}
+		}
+		
+		for (int i = 0; i < moves.length; i++) {
+			moves[i] = i;
+		}
+		
+	}
+	
+	private void play() {
+		
+		
+	}
+	
+	
+	private void showBoard()
+	{
+		System.out.printf("\t %c \t | \t %c \t | \t %c \n\n ",board[0][0],
+                board[0][1], board[0][2] );
+		
+		System.out.printf("\t %c \t | \t %c \t | \t %c  \n\n",board[1][0],
+                board[1][1], board[1][2] );
+		
+		System.out.printf("\t %c \t | \t %c \t | \t %c  \n \n \n",board[2][0],
+                board[2][1], board[2][2] );
+	}
+	
+	private void showInstructions()
+	{
+		System.out.println("\t\t\t  Tic-Tac-Toe\n\n");
+		System.out.println("Choose a cell numbered from 1 to 9 as below"+
+            " and play\n\n");
+		System.out.println("\t 1 \t | \t 2 \t | \t 3  \n");
+		System.out.println("\n");
+		System.out.println("\t 4 \t | \t 5 \t | \t 6  \n");
+		System.out.println("\n");
+		System.out.println("\t 7 \t | \t 8 \t | \t 9  \n");
+		System.out.println("\n");
+	}
+	
+	private void declareWinner(WhoseTurn whoseTurn)
+	{
+		
+		if(whoseTurn == WhoseTurn.COMPUTER)
+		{
+			System.out.println("COMPUTER HAS WON");
+		}
+		else
+			System.out.println("PLAYER HAS WON");
+		
+	}
+
+}
