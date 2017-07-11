@@ -1,0 +1,69 @@
+package com.aceprogrammer.basics;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Iterator;
+
+public class PalindromeQueue {
+	
+	
+	// using inbuilt ArrayDeque of Characters
+	private ArrayDeque<Character> deque;
+
+	public static void main(String[] args)throws IOException {
+		
+		System.out.println("Enter the string to be checked");
+		
+		String s;
+		
+		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
+		{
+			do
+			{
+			s = br.readLine();		
+			}
+			while(s != null);
+		}
+		
+		PalindromeQueue pqueue = new PalindromeQueue(s);
+		
+		pqueue.check();
+		
+		}
+	
+
+	// convert input String to array of characters
+	public PalindromeQueue(String s) {
+		
+		deque = new ArrayDeque<>();
+		for (int i = 0; i < s.length(); i++) {
+			
+			// directly adding the characters assuming the user will enter only characters but no other characters
+			deque.add(s.charAt(i));
+		}
+		
+	}
+	
+	
+	private void check() 
+	{
+		
+		boolean found = true;
+		char first;
+		char last;
+		
+		
+			first = deque.removeFirst();
+			last = deque.removeLast();
+			if(first != last)
+			{
+				found = false;
+			}
+		}
+		
+	}
+	
+
+	}

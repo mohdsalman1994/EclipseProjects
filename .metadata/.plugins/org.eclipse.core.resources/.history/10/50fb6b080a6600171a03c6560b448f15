@@ -1,0 +1,33 @@
+package com.aceprogrammer.basics;
+
+public class VendingMachine {
+	public static void main(String args[]) {
+		int[] coins = { 1, 2, 5, 10, 20, 50, 100, 500, 1000 };
+		int sum = 800;
+		VendingMachine minCoin = new VendingMachine();
+		System.out.println(minCoin.findMinCoins(coins, sum));
+		}
+
+		// Assume coin array is sorted. if not sort the array first.
+		private int findMinCoins(int[] coins, int sum) {
+		// base case
+		if (sum <= 0 || coins.length == 0) {
+		return 0;
+		}
+
+//		for (int i = coins.length - 1; i >= 0; i--) {
+//		if (coins[i] <= sum) {
+//		return 1 + findMinCoins(coins, sum - coins[i]);
+//		}
+//		}
+		
+		for (int i = coins.length - 1; i >= 0; i--) {
+			if (coins[i] <= sum) {
+			return sum/coins[i] + findMinCoins(coins, sum%coins[i]);
+			}
+			}
+		return 0;
+		}
+
+
+}

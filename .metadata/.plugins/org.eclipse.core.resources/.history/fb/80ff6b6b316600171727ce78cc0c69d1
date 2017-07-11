@@ -1,0 +1,51 @@
+package com.aceprogrammer.basics.Report;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+public class ReportGenerator {
+	
+	
+	private StockPortfolio sp;
+	
+	public ReportGenerator() throws FileNotFoundException, IOException {
+		
+		sp = new StockPortfolio();
+	}
+	
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		
+		System.out.println("Stock Report Generator");
+		ReportGenerator rg = new ReportGenerator();
+		rg.displayMenu();
+
+	}
+	
+	public void generateIndividualReport()
+	{
+		
+	}
+	
+	public void generateTotalReport()
+	{
+		
+	}
+	
+	public void displayMenu()
+	{
+		List<Stock> stockList = sp.getStockPortfolios();
+		System.out.println("Choose the Company whose report you want to display");
+		
+		int index = 1;
+		for (Stock stock : stockList) {
+			System.out.printf("%d  %s \n", index, stock.getName());
+			index++;
+		}
+		System.out.printf("%d All Companies \n",index);
+		
+		
+	}
+
+}

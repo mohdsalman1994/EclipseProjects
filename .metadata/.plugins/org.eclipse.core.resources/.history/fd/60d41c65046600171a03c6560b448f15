@@ -1,0 +1,36 @@
+package com.aceprogrammer.basics;
+
+public class VendingMachine {
+	
+	// m is size of coins array (number of different coins)
+    static double minCoins(double coins[], double m, double V)
+    {
+       // base case
+       if (V == 0) return 0;
+      
+       // Initialize result
+       double res = Double.MAX_VALUE;
+      
+       // Try every coin that has smaller value than V
+       for (int i=0; i<m; i++)
+       {
+         if (coins[i] <= V)
+         {
+             double sub_res = minCoins(coins, m, V-coins[i]);
+      
+             // Check for double_MAX to avoid overflow and see if
+             // result can minimized
+             if (sub_res != Double.MAX_VALUE && sub_res + 1 < res)
+                res = sub_res + 1;
+         }
+       }
+       return res;
+    }
+    public static void main(String args[])
+    {
+       double coins[] =  {10, 5, 2, 1};
+       double m = coins.length;
+       double V = 50;
+       System.out.println("Minimum coins required is "+ minCoins(coins, m, V) );
+    }
+}

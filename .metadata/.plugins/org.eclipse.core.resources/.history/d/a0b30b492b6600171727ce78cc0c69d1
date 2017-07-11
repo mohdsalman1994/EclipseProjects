@@ -1,0 +1,41 @@
+package com.aceprogrammer.basics.Report;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+public class ReportGenerator {
+	
+	
+	private StockPortfolio sp;
+	
+	public ReportGenerator() throws FileNotFoundException, IOException {
+		
+		sp = new StockPortfolio();
+	}
+	
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		
+		System.out.println("Stock Report Generator");
+		ReportGenerator rg = new ReportGenerator();
+		rg.displayMenu();
+
+	}
+	
+	public void generateIndividualReport()
+	{
+		
+	}
+	
+	public void generateTotalReport()
+	{
+		
+	}
+	
+	public void displayMenu()
+	{
+		
+	}
+
+}
