@@ -1,0 +1,14 @@
+package com.aceprogrammer.basics;
+
+import java.util.List;
+
+public class InventoryManager {
+	
+	List<Inventory> inventoryList;
+
+	public InventoryManager()
+	{
+		// populate our inventory from JSON file
+		
+	}
+}

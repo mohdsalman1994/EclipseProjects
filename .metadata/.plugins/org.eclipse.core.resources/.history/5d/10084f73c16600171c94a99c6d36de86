@@ -1,0 +1,80 @@
+package com.aceprogrammer.basics;
+
+public class UtilityClassDemo {
+
+	public static void main(String[] args) {
+		
+		
+		System.out.println("This is a demonstration of my Utility Class");
+		
+		// our arrays used for demonstration
+		int[] unsortedIntArray = { 54, 31, 21, 45, 11, 13, 18, 38, 48};				
+		int[] sortedIntArray = { 11, 12, 18, 21, 31, 38, 45, 48, 54}; 
+		
+		String[] unsortedStringArray = {"gamma", "alpha", "beta", "delta", "hexa", "amma"};
+		String[] sortedStringArray = {"alpha", "amma", "beta", "delta", "gamma", "hexa"};
+		
+		UtilityClassDemo utility = new UtilityClassDemo();
+		
+		// call each method and store the time required to perform each function
+		
+		// start time
+		utility.binarySearch(sortedIntArray, 45);		
+		// end time
+		
+		utility.binarySearch(sortedStringArray, "amma");
+		
+		utility.bubbleSort(unsortedIntArray);
+		
+		utility.bubbleSort(unsortedStringArray);
+		
+		utility.insertionSort(unsortedIntArray);
+		
+		utility.insertionSort(unsortedStringArray);
+
+	}
+	
+	
+	private int binarySearch(int[] array, int key)
+	{
+		return 0;
+	}
+	
+	
+	private int binarySearch(String[] array, String key)
+	{
+		return 0;
+	}
+	
+	private void insertionSort(int[] array)
+	{
+		
+	}
+	
+	private void insertionSort(String[] array)
+	{
+		
+	}
+	
+	private void bubbleSort(int[] array)
+	{
+		
+	}
+	
+	private void bubbleSort(String[] array)
+	{
+		
+	}
+	
+	private void displaySortedArray(int[] array)
+	{
+		
+	}
+	
+	private void displaySortedArray(String[] array)
+	{
+		
+	}
+
+
+}

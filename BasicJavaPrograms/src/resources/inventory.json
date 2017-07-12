@@ -1,0 +1,8 @@
+{
+"items":
+[
+{ "name":"Rice", "weight":"43", "price":"32"},
+{ "name":"Wheat", "weight":"54", "price":"40"},
+{ "name":"Pulses", "weight":"28", "price":"70"}
+]
+}

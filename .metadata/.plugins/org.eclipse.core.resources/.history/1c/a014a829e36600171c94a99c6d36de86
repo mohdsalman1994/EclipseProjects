@@ -1,0 +1,34 @@
+package com.aceprogrammer.basics;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
+public class InventoryManager {
+	
+	List<Inventory> inventoryList;
+	
+	// the path where the json file is stored
+	String filePath = "src/resources/inventory.json";
+
+	public InventoryManager()
+	{
+		
+		// populate our inventory from JSON file
+		try 
+			(FileReader fr = new FileReader(new File("src/resources/inventory.json")))
+			{
+			
+			
+			
+			
+		} 
+		catch (IOException e) {
+			System.out.println("File Not found exception");
+			e.printStackTrace();
+		}
+		
+	}
+}
