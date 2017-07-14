@@ -1,0 +1,181 @@
+package com.aceprogrammer.basics.LinkedList;
+
+
+public class OrderedLinkedList {
+
+	IntegerNode p = null;	
+	int count = 0;
+	
+	
+	public static void main(String[] args) {
+		int[] test = { 1, 2, 3};
+		OrderedLinkedList ol = new OrderedLinkedList();
+		for (int i = 0; i < test.length; i++) {
+			ol.append(test[i]);
+		}
+		
+		ol.display();
+	}
+	
+	
+	void append(int value)
+	{		
+		IntegerNode q;
+		
+		IntegerNode temp = new IntegerNode();
+		temp.data = value;
+		temp.link = null;
+		
+		
+		// the list is empty
+		if(p == null)
+		{
+			System.out.println("Creating the list");
+			p = temp;
+			System.out.println("Integer added successfully");
+			count++;
+		}
+		
+		else
+			
+			// if the given value is less than the first value
+			if(value <= p.data)
+			{
+				
+				System.out.println("Less than first value");
+				temp.link = p;
+				p = temp;
+			}
+		
+		else
+		{
+			q = p;
+			
+			System.out.println("Trying to insert after first element");
+			
+			while(q!= null)
+			{
+				// if the value is between the current node and the last node
+				if(q.data < value && value < q.link.data)
+				{
+					System.out.println("Between current value");
+				temp.link = q.link;
+				q.link = temp;
+				q = temp.link;
+				
+				}
+				// if the value is greater than the last node
+				else
+				{
+					System.out.println("Greater than last value");
+					q.link = temp;
+					q = temp;
+				}
+				
+				q = q.link;
+				
+			}
+						
+			count++;
+						
+		}
+		
+	}
+	
+	
+	void display()
+	{
+		IntegerNode q;
+		q = p;
+		
+		if(q == null)
+		{
+			System.out.println("List is empty");
+		}
+		
+		else
+			
+			while(q!= null)
+			{
+				System.out.print(q.data+" ");
+				q = q.link;
+			}
+		System.out.println();
+	}
+	
+	
+	void insert(int value)
+	{						
+		
+		IntegerNode q, old;
+		boolean found = false;
+		
+		q=p;
+		old = p;
+
+		if(q!= null)
+		{
+			
+			while(q!= null)
+			{
+								
+				if(q.data == value)
+				{
+					if(q == p)
+					{
+						q = q.link;
+						found = true;
+					}
+					else
+					{
+					old.link = q.link;
+					found = true;
+					q = null;
+					}
+					System.out.println("Value found and deleted");
+					count--;
+				}
+				
+				else
+				{					
+					old = q;
+					q=q.link;
+				}
+			} // end while
+		}
+			
+			if(found == false)					
+			{
+				System.out.println("Trying to append");
+				
+				append(value);
+			}
+					
+		
+	}
+	
+	public Integer[] toIntegerArray() throws RuntimeException
+	{
+		if(count == 0)
+		{
+			throw new RuntimeException("List is empty");
+		}
+		
+		else
+			
+		{
+			Integer[] words = new Integer[count];
+			IntegerNode q=p;
+			int i = 0;
+			while(q!= null)
+			{
+				words[i] = q.data;
+				q = q.link;
+			}
+			
+			return words;
+		}
+			
+	}
+
+}

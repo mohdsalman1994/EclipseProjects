@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UnorderedLinkedListDemo {
 	
-	String filePath = "src/resources/linkedListFeeder.txt";
+	String filePath = "src/resources/uLinkedListFeeder.txt";
 	
 	UnorderedLinkedList uList;
 

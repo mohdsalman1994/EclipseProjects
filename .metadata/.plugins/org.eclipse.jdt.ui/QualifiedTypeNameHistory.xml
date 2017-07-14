@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.ArrayReaderLibrary"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.ArrayReaderLibrary.ArrayType"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.BubbleSort"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.InsertionSort"/>
-<fullyQualifiedTypeName name="java.lang.Character"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.PalindromeQueue"/>
 <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
 <fullyQualifiedTypeName name="java.util.Deque"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Report.StockPortfolio"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Report.ReportGenerator"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Report.Stock"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.BinaryWordSearch"/>
-<fullyQualifiedTypeName name="java.nio.file.Files"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.UtilityClassDemo"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="javax.xml.ws.Endpoint"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.StopWatch"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Inventory"/>
-<fullyQualifiedTypeName name="java.nio.file.Path"/>
-<fullyQualifiedTypeName name="java.nio.file.Paths"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
@@ -30,7 +19,6 @@
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Item"/>
 <fullyQualifiedTypeName name="org.json.simple.ItemList"/>
 <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.InventoryManagerDemo.InventoryManager"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
@@ -54,10 +42,22 @@
 <fullyQualifiedTypeName name="java.util.TreeMap"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.HashFunction.MyHashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.HashFunction.HashMapManager"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.io.EOFException"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.Node"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.UnorderedLinkedListDemo"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.WordReader"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.UnorderedLinkedList"/>
+<fullyQualifiedTypeName name="java.nio.file.Files"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.WordReaderWriter"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.nio.file.Path"/>
+<fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 </qualifiedTypeNameHistroy>
