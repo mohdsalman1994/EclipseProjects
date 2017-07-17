@@ -2,8 +2,8 @@ package com.aceprogrammer.basics.BankCounter;
 
 public class Customer {
 	
-	int id;	
-	int savings;
+	private int id;	
+	private int savings;
 	
 	
 	public Customer(int id, int savings) {
@@ -30,6 +30,12 @@ public class Customer {
 
 	public void setSavings(int savings) {
 		this.savings = savings;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", balance=" + savings + "]";
 	}
 	
 	

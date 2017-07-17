@@ -21,3 +21,17 @@
 1500010511525	Rename resource 'linkedListFeeder.txt'
 1500011420884	Copy file
 1500025344125	Delete element
+1500115731023	Rename type 'Utilities'
+1500117448958	Move member 'leapYearChecker'
+1500117698224	Rename method 'display'
+1500117716626	Move member 'powerOfTwo'
+1500118983266	Move member 'harmonicGenerator'
+1500119107562	Move member 'factorize'
+1500119307308	Move member 'gamble'
+1500119548729	Rename package 'com.aceprogrammer.basics.CouponCodes'
+1500119581751	Move compilation unit
+1500120326162	Move compilation unit
+1500120332144	Delete element
+1500121119094	Rename type 'AnagramTest'
+1500121247810	Move member 'anagram'
+1500121407597	Move compilation unit

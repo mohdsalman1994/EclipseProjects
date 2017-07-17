@@ -1,0 +1,19 @@
+package com.aceprogrammer.basics.CliniqueManagement;
+
+public class CliniqueManager {
+
+	// display the list of patients
+	public void displayPatients()
+	{
+		// read patient data from JSON file
+		
+		// iterate over the collection and display each patients details
+	}
+	
+	// display list of doctors
+	
+	// display doctor-patient report
+	
+	// make appointments
+	
+}

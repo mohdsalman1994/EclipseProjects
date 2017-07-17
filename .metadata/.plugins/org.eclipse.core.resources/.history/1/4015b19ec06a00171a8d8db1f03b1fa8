@@ -1,0 +1,10 @@
+{
+"doctors":
+[
+{ "id":1,"name":"Ashish", "specialization":"ENT"},
+{ "id":2,"name":"Sandeep", "specialization":"NeuroSurgeon"},
+{ "id":3,"name":"Batra", "specialization":"Hair"},
+{ "id":4,"name":"Anand", "specialization":"Pediatric"},
+{ "id":5,"name":"Sufiyan", "specialization":"Ophtalmologist"}
+]
+}

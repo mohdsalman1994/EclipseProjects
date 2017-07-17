@@ -34,7 +34,7 @@ public class CouponCodes {
 		HashSet<Integer> coupons = new HashSet<>();
 		
 		//start generating random no's and add them until we have the desired no of coupons
-		while(couponCount <=n)
+		while(couponCount <n)
 		{
 			coupon = random.nextInt(1001);
 			

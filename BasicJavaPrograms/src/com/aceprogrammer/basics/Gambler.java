@@ -3,7 +3,8 @@ package com.aceprogrammer.basics;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Random;
+
+import com.aceprogrammer.basics.Utilities.MyUtilities;
 
 public class Gambler {
 
@@ -30,41 +31,7 @@ public class Gambler {
 			System.out.println("Dear to be millionare, your here to win! So enter an amount greater than your stake!");
 			goal = Integer.parseInt(br.readLine());
 		}
-		gamble(stake, goal);
-		
-	}
-	
-	public static void gamble(int stake, int goal){
-		int win = 0;
-		int loss = 0;
-		float totalGambles = 0;
-		int gamble = 0;
-		Random random = new Random();
-		do
-		{
-			gamble = random.nextInt(2);
-			System.out.println(gamble);
-			totalGambles++;
-			if(gamble == 0)
-			{
-				stake++;
-				System.out.println("Yay you won! You now have "+stake+". Your goal:"+goal);
-				win++;
-			}
-			else
-			{
-				stake--;
-				System.out.println("Bad luck!You lost! You now have "+stake+". Your goal:"+goal);
-				loss++;
-			}			
-		}
-		while(!(stake == 0 || stake == goal));
-		
-		System.out.println("You won "+win+" times");
-		float winp = (win/totalGambles)*100;
-		System.out.println("Win percent%"+winp);
-		float lossp = (loss/totalGambles)*100;
-		System.out.println("Loss percent%"+lossp);
+		MyUtilities.gamble(stake, goal);
 		
 	}
 }

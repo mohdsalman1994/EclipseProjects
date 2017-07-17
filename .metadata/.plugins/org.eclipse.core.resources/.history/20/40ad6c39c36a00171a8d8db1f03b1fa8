@@ -1,0 +1,16 @@
+{
+[
+{ "id":1,"name":"Satyendra", "age": 25},
+{ "id":2,"name":"Umar", "age": 23},
+{ "id":3,"name":"Amit", "age": 22},
+{ "id":4,"name":"Miral", "age": 24},
+{ "id":5,"name":"Ajit", "age": 26},
+{ "id":6,"name":"Hamid", "age": 33},
+{ "id":7,"name":"Pooja", "age": 35},
+{ "id":8,"name":"Snehal", "age": 45},
+{ "id":9,"name":"Nikita", "age": 25},
+{ "id":10,"name":"Rahul", "age": 24},
+{ "id":11,"name":"Satyendra", "age": 29},
+{ "id":12,"name":"Satyendra", "age": 28}
+]
+}

@@ -1,0 +1,20 @@
+package com.aceprogrammer.basics.BankCounter;
+
+public class Transaction {
+	
+	int customerId;
+	
+	TransactionType transType;
+	
+	int transAmount;
+
+	public Transaction(int customerId, TransactionType transType, int transAmount) {
+		
+		this.customerId = customerId;
+		this.transType = transType;
+		this.transAmount = transAmount;
+	}
+	
+	
+
+}

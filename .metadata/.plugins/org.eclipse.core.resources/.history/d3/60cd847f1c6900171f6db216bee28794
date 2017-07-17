@@ -1,0 +1,88 @@
+package com.aceprogrammer.basics.BankCounter;
+
+import java.util.Queue;
+import java.util.Random;
+
+public class Bank {
+
+	// has some predefined customers
+	// but to make this a simulation we will need the total cash of all these customers to be
+	// greater than the initial bank balance
+	
+	
+	Customer[] customers;
+	
+	Random random;
+	
+	int bankBalance;
+	
+	// has a queue of transactions
+	Queue<Transaction> queue;
+	
+	public Bank(int noOfCustomers, int initialBalance)
+	{
+		
+		customers = new Customer[noOfCustomers-1];
+		bankBalance = initialBalance;
+		
+		// initialize balance of customers randomly ranging between 1000 and 10000
+		random = new Random();
+		for (int i = 0; i < customers.length; i++) {
+			int randomNo = random.nextInt(10 - 1) + 1;
+			customers[i] = new Customer(i, randomNo * 1000);
+		}
+	
+	}
+	
+	// deposit method
+	public void deposit(int id, int amount)
+	{
+		bankBalance += amount;
+		int savings = customers[id].getSavings() + amount;
+		customers[id].setSavings(savings);
+		System.out.println(customers[id]);
+		
+	}
+	
+	// withdrawal method
+	public boolean withdrawal(int id, int amount)
+	{
+		// first check whether the bank has sufficient balance
+		if(bankBalance < amount)
+		{
+			System.out.println("Insufficient Cash in bank");
+			return false;
+		
+		}
+		
+		
+		// now check whether the customer has sufficient balance
+		// this condition is just added for fun
+		// but we will assume that the user will not enter such amount
+		// since you are going to show the customer his current balance
+		int savings = customers[id].getSavings();
+		if(savings < amount)
+		{
+			System.out.println("Sorry you don't have sufficient balance");
+			return false;
+		}
+		
+		// update bankBalance and customerSaving
+		bankBalance -= amount;
+				
+		savings -= amount;
+		customers[id].setSavings(savings);
+		System.out.println(customers[id]);
+		
+		return true;
+	}
+	
+	// add transaction to the queue
+	public void addTransaction(int customerId, TransactionType transType, int amount)
+	{
+		Transaction transaction = new Transaction()
+	}
+	
+	
+	// remove transaction from the queue
+}

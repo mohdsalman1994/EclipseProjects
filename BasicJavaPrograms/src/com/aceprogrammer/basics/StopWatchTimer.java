@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.aceprogrammer.basics.Utilities.StopWatch;
+
 public class StopWatchTimer
 {
 	public static void main(String args[])throws IOException
@@ -26,8 +28,10 @@ public class StopWatchTimer
 			input = br.readLine();
 		}
 		
-		// get the starting time
-		Long startTime = System.currentTimeMillis();
+		StopWatch stopWatch = new StopWatch();
+		
+		// start the stopWatch
+		stopWatch.start();
 		
 		// read the next input
 		input = br.readLine();
@@ -39,11 +43,11 @@ public class StopWatchTimer
 			input = br.readLine();
 		}
 		
-		// get the ending time
-		Long endTime = System.currentTimeMillis();
+		// stop the stopWatch
+		stopWatch.stop();
 		
 		// calculate elapsed time in seconds (divide the result by 1000)
-		Long elapsedTime = (endTime - startTime) / 1000;
+		Long elapsedTime = stopWatch.getElapsedTime();
 		
 		System.out.println("Elapsed Time is "+ elapsedTime+ " seconds");
 	}

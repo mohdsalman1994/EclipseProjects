@@ -1,0 +1,16 @@
+package com.aceprogrammer.basics.CliniqueManagement;
+
+import java.util.List;
+import java.util.Map;
+
+public class Appointment {
+	
+	private Map<Integer, Map<Doctor, List<Patient>>> appointmentDetails;
+
+	public Map<Integer, Map<Doctor, List<Patient>>> getAppointmentDetails() {
+		return appointmentDetails;
+	}
+	
+	
+
+}

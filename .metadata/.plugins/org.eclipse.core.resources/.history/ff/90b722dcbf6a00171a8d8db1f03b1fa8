@@ -1,0 +1,37 @@
+package com.aceprogrammer.basics.CliniqueManagement;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.List;
+
+import com.google.gson.Gson;
+
+public class CliniqueManager {
+	
+	FileReader fr;
+	String patientsFile = "src/resources/patients.json";
+
+	public CliniqueManager() throws FileNotFoundException
+	{
+		fr = new FileReader("src/resources/patients.json");
+	}
+	
+	// display the list of patients
+	public void displayPatients()
+	{
+		Gson gson = new Gson();
+		
+		// read patient data from JSON file
+		List<Patient> patientList = gson.fromJson(, classOfT) 
+		
+		
+		// iterate over the collection and display each patients details
+	}
+	
+	// display list of doctors
+	
+	// display doctor-patient report
+	
+	// make appointments
+	
+}

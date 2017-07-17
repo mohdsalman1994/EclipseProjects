@@ -1,0 +1,24 @@
+package com.aceprogrammer.basics.Utilities;
+
+public class MyUtilities {
+	
+	
+	public static double factorial(double num)
+	{
+		
+		double fact = 1;
+		for (double i = 1; i <= num; i++) {
+			fact = fact * i;
+		}
+		return fact;		
+	}
+	
+	static double noOfBinarySearchTrees(double numNode) {
+		double f1 = factorial(2 * numNode);
+		double f2 = factorial(numNode + 1);
+		double f3 = factorial(numNode);
+		double numTree = f1 / (f2 * f3);
+		return numTree;
+	}
+
+}
