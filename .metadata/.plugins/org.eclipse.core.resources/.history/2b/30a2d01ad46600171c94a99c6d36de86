@@ -1,8 +1,0 @@
-{
-"items":
-[
-{ "name":"Rice", "weigth":"43", "pricePerKg":"32"},
-{ "name":"Wheat", "weigth":"54", "pricePerKg":"40"},
-{ "name":"Pulses", "weigth":"28", "pricePerKg":"70"}
-]
-}

@@ -1,7 +1,0 @@
-package com.aceprogrammer.basics.HashFunction;
-
-import java.io.Serializable;
-
-public class MyHashMap implements Serializable {
-
-}

@@ -1,6 +1,0 @@
-package com.aceprogrammer.basics.CliniqueManagement;
-
-public enum Availibility {
-	
-	AM, PM, BOTH;
-}

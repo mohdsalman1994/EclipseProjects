@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class BinaryWordSearch {
 	
 	private String[] words;
+	private String filePath = "src/resources/words.txt";
 
 	public static void main(String[] args) throws IOException {
 		
@@ -41,7 +42,7 @@ public class BinaryWordSearch {
 	private void readFile() throws IOException {
 		
 		//read the file and store it in a String array
-				Path p = Paths.get("src/resources/words.txt");
+				Path p = Paths.get(filePath);
 				
 				String content	= new	String(Files.readAllBytes(p));
 				

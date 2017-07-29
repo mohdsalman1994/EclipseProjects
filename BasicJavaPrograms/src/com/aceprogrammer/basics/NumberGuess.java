@@ -36,8 +36,7 @@ class Guesser
 
 	// initialize our array in which we will search
 	public Guesser(int n) {
-		
-		System.out.println("Entered constructor");
+				
 		array = new int[n];
 		for (int i = 0; i < array.length; i++) {
 			array[i]= i;
@@ -57,9 +56,7 @@ class Guesser
 
 	// main logic of our program
 	public void guess() throws IOException {
-		
-		
-		System.out.println("Entered guess method");
+				
 		guessList  = new ArrayList<>();
 		low = 0;
 		high = array.length - 1;

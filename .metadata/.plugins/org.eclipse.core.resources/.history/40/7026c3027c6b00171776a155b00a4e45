@@ -1,0 +1,11 @@
+package com.aceprogrammer.basics.CliniqueManagement;
+
+public class CliniqueDemoApp {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("This is a an app to demonstrate Clinique Management");
+		
+	}
+
+}

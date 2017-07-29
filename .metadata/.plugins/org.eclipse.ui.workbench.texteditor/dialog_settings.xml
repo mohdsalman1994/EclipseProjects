@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="sc" key="selection"/>
+		<item value="gson" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="gson"/>
+			<item value="save"/>
 			<item value="console"/>
 			<item value="getLink"/>
 			<item value="ptr"/>
 			<item value="start"/>
 			<item value="tmp"/>
 			<item value="uList"/>
-			<item value="UnorderedLinkedList"/>
-			<item value="String"/>
 		</list>
 		<list key="replacehistory">
 			<item value="sc"/>

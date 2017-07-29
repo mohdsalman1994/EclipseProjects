@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
-<fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.InventoryManager"/>
-<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.Item"/>
-<fullyQualifiedTypeName name="org.json.simple.ItemList"/>
-<fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.InventoryManagerDemo.InventoryManager"/>
-<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
-<fullyQualifiedTypeName name="java.util.regex.Matcher"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.Regex"/>
-<fullyQualifiedTypeName name="com.aceprogrammer.basics.myHashMap.HashFilePopulator"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
@@ -25,11 +11,8 @@
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.myHashMap.MyHashMap"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.HashFunction.MyHashMapDemo"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.HashFunction.HashMapSerializer"/>
-<fullyQualifiedTypeName name="java.util.TreeMap"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.HashFunction.MyHashMap"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.HashFunction.HashMapManager"/>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="java.io.EOFException"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.Node"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.UnorderedLinkedListDemo"/>
@@ -38,16 +21,12 @@
 <fullyQualifiedTypeName name="java.nio.file.Files"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.WordReaderWriter"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.nio.file.Path"/>
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.OrderedLinkedList"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.LinkedList.IntegerNode"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.BankCounter.Customer"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
@@ -60,4 +39,25 @@
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Utilities.MyUtilities"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.aceprogrammer.basics.Utilities.StopWatch"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.CliniqueManagement.Availibility"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.CliniqueManagement.CliniqueManager"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Type"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="javax.print.Doc"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.CliniqueManagement.Patient"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="java.util.function.Predicate"/>
+<fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+<fullyQualifiedTypeName name="com.aceprogrammer.basics.CliniqueManagement.Doctor"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

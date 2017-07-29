@@ -1,0 +1,86 @@
+package com.aceprogrammer.basics.CliniqueManagement;
+
+import java.util.Scanner;
+
+public class CliniqueDemoApp {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("This is a an app to demonstrate Clinique Management");
+		
+		CliniqueManager cManager = new CliniqueManager();
+		
+		String choice = "n";
+		
+		int option;
+		
+		// keep asking user what to do until he wants to exit
+		try(Scanner sc = new Scanner(System.in))
+		{
+		// keep the program running until user wants to quit
+		do
+		{
+		System.out.println("Enter your User Type");
+		System.out.println("1.Clinique Manager");
+		System.out.println("2.Patient");
+		
+		option = sc.nextInt();
+		
+		outer:
+		switch (option) 
+		{
+		case 1:System.out.println("What do you want to see");
+			   System.out.println("1.Doctor List");
+			   System.out.println("2.Patient List");
+			   System.out.println("3.Appointments for the week");
+			   int no = sc.nextInt();
+			   
+			   inner:
+			switch (no) {
+			case 1:cManager.displayDoctors();				
+			break;
+				
+			case 2:cManager.displayPatients();
+			break;
+			 
+			case 3:cManager.displayReport();
+			break;
+
+			default: System.out.println("Incorrect option");
+				break;
+			}
+			   
+			   System.out.println("Enter 'y' to continue or 'n' no exit");
+			   choice = sc.next();
+			break;
+			
+			
+		case 2:boolean booked = false;
+		    while(!booked)
+		    {
+		    System.out.println("Enter your patientId");
+			int pId = sc.nextInt();
+			System.out.println("Enter the day to book appointment");
+			int day = sc.nextInt();
+			cManager.displayDoctors();
+			System.out.println("Enter the doctor id");
+			int docId = sc.nextInt();
+			booked = cManager.makeAppointment(day, pId, docId);
+		    }
+			   System.out.println("Enter 'y' to continue or 'n' no exit");
+			   choice = sc.next();
+			break;
+		
+		default: System.out.println("Incorrect input. Please enter a correct input.");
+		
+		}
+		
+		}
+		while(choice.equalsIgnoreCase("y"));		
+		
+		}
+		
+		
+	}
+
+}
