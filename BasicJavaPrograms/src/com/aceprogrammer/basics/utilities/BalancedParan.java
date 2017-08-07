@@ -1,11 +1,15 @@
-package com.aceprogrammer.basics;
+package com.aceprogrammer.basics.utilities;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Stack;
 
+/**
+ * @author Salman Shaikh
+ * Class to check given expression for
+ * balanced paranthesis
+ */
 public class BalancedParan {
+	
+	// the different types of paranthesis to be checked
     private static final char L_PAREN    = '(';
     private static final char R_PAREN    = ')';
     private static final char L_BRACE    = '{';
@@ -13,28 +17,33 @@ public class BalancedParan {
     private static final char L_BRACKET  = '[';
     private static final char R_BRACKET  = ']';
 
-    public static boolean isBalanced(String s) {
+    /**
+     * @param expression the string to be checked
+     * @return true or false i.e. whether the given expression
+     * is balanced or not
+     */
+    public static boolean isBalanced(String expression) {
         Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < expression.length(); i++) {
 
-            if      (s.charAt(i) == L_PAREN)
+            if      (expression.charAt(i) == L_PAREN)
             {
             	stack.push(L_PAREN);
             }
 
             else 
-            	if (s.charAt(i) == L_BRACE)
+            	if (expression.charAt(i) == L_BRACE)
             	{
             		stack.push(L_BRACE);
             	}
 
             else 
-            	if (s.charAt(i) == L_BRACKET)
+            	if (expression.charAt(i) == L_BRACKET)
             	{
             		stack.push(L_BRACKET);
             	}
 
-            else if (s.charAt(i) == R_PAREN) {
+            else if (expression.charAt(i) == R_PAREN) {
                 if (stack.isEmpty())
                 {
                 	return false;
@@ -45,7 +54,7 @@ public class BalancedParan {
                 }
             }
 
-            else if (s.charAt(i) == R_BRACE) {
+            else if (expression.charAt(i) == R_BRACE) {
                 if (stack.isEmpty())      
                 {
                 	return false;
@@ -56,7 +65,7 @@ public class BalancedParan {
                 }
             }
 
-            else if (s.charAt(i) == R_BRACKET) {
+            else if (expression.charAt(i) == R_BRACKET) {
                 if (stack.isEmpty())   
                 	{
                 	return false;
@@ -71,19 +80,6 @@ public class BalancedParan {
 
         }
         return stack.isEmpty();
-    }
-
-
-    public static void main(String[] args)throws IOException {
-    	
-    	
-    	System.out.println("Enter the expression to be checked");
-    	
-    	try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
-    	{
-        String s = br.readLine();
-        System.out.println(isBalanced(s));
-    	}
     }
 
 }

@@ -1,5 +1,3 @@
-this is just a test file
-in which you are going to
-search a word and if found
-then it will show match found
-else no match found.
+this is just a test file in which you are
+going to search a word and if found
+then it will show match found else no match found.

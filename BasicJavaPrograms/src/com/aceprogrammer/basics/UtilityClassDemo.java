@@ -2,7 +2,7 @@ package com.aceprogrammer.basics;
 
 import java.util.Arrays;
 
-import com.aceprogrammer.basics.Utilities.StopWatch;
+import com.aceprogrammer.basics.utilities.StopWatch;
 
 public class UtilityClassDemo {
 

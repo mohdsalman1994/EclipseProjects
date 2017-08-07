@@ -2,8 +2,18 @@ package com.aceprogrammer.basics;
 
 import java.util.Scanner;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class HelloWorld
 {
+	/**
+	 * @param args
+	 * My first java program in this project.
+	 * This method takes user's name as input
+	 * and displays a welcome message with the user's name
+	 */
 	public static void main(String args[])
 	{
 

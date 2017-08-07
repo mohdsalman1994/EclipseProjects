@@ -1,47 +1,50 @@
-package com.aceprogrammer.basics;
+package com.aceprogrammer.basics.utilities;
 
 import java.util.Scanner;
 
+
+/**
+ * @author Salman
+ * This is a 2D Array library
+ * Currenty it supports only Integers and Double
+ *
+ */
 public class ArrayReaderLibrary {
 
-	ArrayType arrayType;
-	int rows;
-	int cols;
-	int[][] integerArray;
-	double[][] doubleArray;
+	// variable to store the type of Array
+	private ArrayType arrayType;
+	
+	// no of rows and columns
+	private int rows;
+	private int cols;
+	
+	// the 2d arrays
+	private int[][] integerArray;
+	private double[][] doubleArray;
 
 
+	
+	/**
+	 * @author Salman Shaikh
+	 * inner class of type enum to hold the array type
+	 *
+	 */
 	public enum ArrayType
 	{
 		INTEGER, DOUBLE;
 	}
 
-	public static void main(String[] args) {
-
-		ArrayReaderLibrary library = new ArrayReaderLibrary();
-
-
-		try(Scanner s = new Scanner(System.in);)
-		{
-			library.readInfo(s);
-
-			library.createArray();
-
-			library.readArray(s);
-
-			library.displayArray();
-		}
-
-
-
-	}
-
 	// read the array type and no of rows and columns
-	private void readInfo(Scanner sc)
+	/**
+	 * @param scanner Stream to read the data from user
+	 * This method asks user for the required type of array,
+	 */
+	public void readInfo(Scanner scanner)
 	{
 		System.out.println("This is a library to read 2d arrays");
 		System.out.println("Currently it supports Integer and Double types");		
 
+		// variable to keep checking whether the user has entered correct input or not
 		boolean correctInput = false;
 
 
@@ -50,7 +53,7 @@ public class ArrayReaderLibrary {
 			System.out.println("Select any one of the following options");
 			System.out.println("1. INTEGER");
 			System.out.println("2. DOUBLE");
-			int type = sc.nextInt();
+			int type = scanner.nextInt();
 
 			switch(type)
 			{
@@ -58,8 +61,8 @@ public class ArrayReaderLibrary {
 			case 1:arrayType = ArrayType.INTEGER;
 			correctInput = true;
 
-			// read m and n
-			readRowAndColumnDetails(sc);
+			// read the no of rows and columns
+			readRowAndColumnDetails(scanner);
 
 			break;
 
@@ -67,7 +70,7 @@ public class ArrayReaderLibrary {
 			correctInput = true;
 
 			// read m and n
-			readRowAndColumnDetails(sc);
+			readRowAndColumnDetails(scanner);
 
 			break;
 
@@ -81,7 +84,10 @@ public class ArrayReaderLibrary {
 
 
 	// generic array creater method
-	private void createArray()
+	/**
+	 * This method creates the required type of array
+	 */
+	public void createArray()
 	{
 		if(arrayType == ArrayType.INTEGER)
 		{
@@ -96,14 +102,18 @@ public class ArrayReaderLibrary {
 			}
 	}
 
-	private void readArray(Scanner sc)
+	/**
+	 * @param scanner the stream to read the data from
+	 * This method reads the data of the given array from the user
+	 */
+	public void readArray(Scanner scanner)
 	{
 		if(arrayType == ArrayType.INTEGER)
 		{
 			for (int i = 0; i < rows; i++) {
 				System.out.printf("Data for %dth row : \n", i+1);
 				for (int j = 0; j < cols; j++) {
-					integerArray[i][j] = sc.nextInt();
+					integerArray[i][j] = scanner.nextInt();
 				}
 			}
 		}
@@ -114,16 +124,18 @@ public class ArrayReaderLibrary {
 				for (int i = 0; i < rows; i++) {
 					System.out.printf("Data for row no %d: \n", i+1);
 					for (int j = 0; j < cols; j++) {
-						doubleArray[i][j] = sc.nextInt();
+						doubleArray[i][j] = scanner.nextInt();
 					}
 				}
 
 			}
 	}
 
-
-	// display the contents of array
-	private void displayArray()
+	
+	/**
+	 * displays the complete array
+	 */
+	public void displayArray()
 	{
 		if(arrayType == ArrayType.INTEGER)
 		{
@@ -149,15 +161,19 @@ public class ArrayReaderLibrary {
 
 
 	// utility method to read no of rows and column
-	private void readRowAndColumnDetails(Scanner sc)
+	/**
+	 * @param scanner the stream to read the data from
+	 * reads the no of rows and columns from the user
+	 */
+	private void readRowAndColumnDetails(Scanner scanner)
 	{
 		System.out.println("Enter the no of rows");
 
-		rows = sc.nextInt();
+		rows = scanner.nextInt();
 
 		System.out.println("Enter the no of columns");
 
-		cols = sc.nextInt();
+		cols = scanner.nextInt();
 	}
 
 }

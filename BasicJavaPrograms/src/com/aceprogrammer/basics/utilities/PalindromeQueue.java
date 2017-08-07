@@ -1,8 +1,5 @@
-package com.aceprogrammer.basics;
+package com.aceprogrammer.basics.utilities;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 
 
@@ -12,31 +9,10 @@ public class PalindromeQueue {
 	// using inbuilt ArrayDeque of Characters
 	private ArrayDeque<Character> deque;
 
-	public static void main(String[] args)throws IOException {
-		
-		System.out.println("Enter the string to be checked");
-		
-		String s;
-		
-		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
-		{
-			
-			// wait for the user to enter a string
-			do
-			{
-			s = br.readLine();		
-			}
-			while(s == null);
-		}
-		
-		PalindromeQueue pqueue = new PalindromeQueue(s);
-		
-		pqueue.check();
-		
-		}
-	
-
-	// convert input String to array of characters
+	/**
+	 * @param s i.e. input string
+	 * convert input String to array of characters
+	 */
 	public PalindromeQueue(String s) {
 		
 		deque = new ArrayDeque<>();
@@ -50,12 +26,14 @@ public class PalindromeQueue {
 	
 	
 	// the function who does all the magic
-	private void check() 
+	public void check() 
 	{
 		
 		boolean found = true;
 		char first;
 		char last;
+		
+		
 		
 		int i = 0;
 		

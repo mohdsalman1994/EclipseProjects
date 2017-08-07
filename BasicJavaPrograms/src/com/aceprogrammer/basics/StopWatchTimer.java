@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.aceprogrammer.basics.Utilities.StopWatch;
+import com.aceprogrammer.basics.utilities.StopWatch;
 
 public class StopWatchTimer
 {

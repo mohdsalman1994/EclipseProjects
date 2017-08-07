@@ -1,24 +1,24 @@
-package com.aceprogrammer.basics;
+package com.aceprogrammer.basics.utilities;
 
 import java.util.Scanner;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class InsertionSort {
 
+	// array to hold the data
+	private int[] array;
 	
-	int[] array;
-	int n;
+	// the total no of elements
+	private int n;
 	
-	public static void main(String[] args) {
-		
-		
-		InsertionSort isort = new InsertionSort();
-		isort.read();
-		isort.sort();
-		isort.display();
-
-	}
-	
-	private void read()
+	/**
+	 * This method reads the data that is to be sorted
+	 * from the user
+	 */
+	public void read()
 	{
 		System.out.println("Enter the total nos to be read");
 		
@@ -39,7 +39,11 @@ public class InsertionSort {
 	}
 	
 	
-	private void sort()
+	/**
+	 * This method sorts the data read from the user
+	 * using insertion sort algorithm
+	 */
+	public void sort()
 	{
 		for(int i = 1; i < n; i++)
 		{
@@ -62,7 +66,7 @@ public class InsertionSort {
 		}
 	}
 	
-	private void display()
+	public void display()
 	{
 		System.out.println("The sorted array :");
 		for (int i = 0; i < array.length; i++) {

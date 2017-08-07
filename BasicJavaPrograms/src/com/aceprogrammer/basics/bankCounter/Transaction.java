@@ -1,4 +1,4 @@
-package com.aceprogrammer.basics.BankCounter;
+package com.aceprogrammer.basics.bankCounter;
 
 public class Transaction {
 	

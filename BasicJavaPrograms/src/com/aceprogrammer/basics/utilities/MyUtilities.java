@@ -1,4 +1,4 @@
-package com.aceprogrammer.basics.Utilities;
+package com.aceprogrammer.basics.utilities;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -16,6 +16,10 @@ public class MyUtilities {
 		return fact;		
 	}
 
+	/**
+	 * @param numNode i.e. the total no of
+	 * @return
+	 */
 	public static double noOfBinarySearchTrees(double numNode) {
 		double f1 = factorial(2 * numNode);
 		double f2 = factorial(numNode + 1);
@@ -24,6 +28,10 @@ public class MyUtilities {
 		return numTree;
 	}
 
+	/**
+	 * @param year i.e. the year to be checked for leap year
+	 * This method displays whether the given year is leap year or not.
+	 */
 	public static void leapYearChecker(int year)
 	{
 		if(year%400 == 0)
@@ -49,28 +57,31 @@ public class MyUtilities {
 	public static void powerOfTwo(int n)
 	{		
 		int i = 0;
-	    int power = 1;
+		int power = 1;
 		System.out.println("Powers of 2 that are less than 2^"+n);
 		if(n>0)
 		{
-	    while (i <= n)
-	    {
-	        System.out.println("2^"+i+" = " + power);
-	        power = power * 2;
-	        i++;
-	    }
+			while (i <= n)
+			{
+				System.out.println("2^"+i+" = " + power);
+				power = power * 2;
+				i++;
+			}
 		}
 		else
 		{
 			while (i >= n)
-	        {
-	            System.out.println("2^"+i+" = " + power);
-	            power = power * 2;
-	            i--;
+			{
+				System.out.println("2^"+i+" = " + power);
+				power = power * 2;
+				i--;
+			}
 		}
 	}
-	}
 
+	/**
+	 * @param n i.e. upto which the harmonic is to be generated
+	 */
 	public static void harmonicGenerator(int n)
 	{
 		double sum = 0.0;
@@ -78,43 +89,55 @@ public class MyUtilities {
 		{
 			sum = sum + 1.0 / i;	
 		}
-	
-		System.out.println("The "+n+"th Harmonic number is "+sum);
-	} // harmonicGenerator
 
-	// a function to print all prime factors
-	public static void factorize(int n)
+		System.out.println("The "+n+"th Harmonic number is "+sum);
+	} 
+
+	/**
+	 * @param number i.e. the no to be factorized
+	 * This method factorizes given no into non-prime factors
+	 */
+	public static void factorize(int number)
 	{
 		// first divide by 2 and print 2 until it is not divisible further by 2
-		while(n%2 == 0)
+		while(number%2 == 0)
 		{
 			System.out.print(2 + " ");
-			n = n/2;
+			number = number/2;
 		}
-		
+
 		// now we know that n will be odd. Hence we can increment
 		// by 2 for odd no's and keep going till i <= sqrt(n)
-		for (int i = 3; i <= Math.sqrt(n); i += 2) {
-				
+		for (int i = 3; i <= Math.sqrt(number); i += 2) {
+
 			// print i until undivisible further 		
-			while(n%i == 0)
+			while(number%i == 0)
 			{
 				System.out.print(i+" ");
-				n = n/i;
+				number = number/i;
 			}
-						
+
 		}
-		
+
 		// This condition is to handle the case when n is
-					// a prime no.
-					// Take example of 88 and try solving to get this case
-					if(n > 2)
-					{
-						System.out.println(n);
-					}
-		
+		// a prime no.
+		// Take example of 88 and try solving to get this case
+		if(number > 2)
+		{
+			System.out.println(number);
+		}
+
 	}
 
+	/**
+	 * @param stake i.e. the money with which the user will start the game
+	 * @param goal i.e. user's target to be reached
+	 * this method simulates a gambling game
+	 * where the user keeps betting 1$ and 
+	 * keeps playing until he has reached goal or
+	 * he loses all money
+	 * 
+	 */
 	public static void gamble(int stake, int goal){
 		int win = 0;
 		int loss = 0;
@@ -140,40 +163,46 @@ public class MyUtilities {
 			}			
 		}
 		while(!(stake == 0 || stake == goal));
-		
+
 		System.out.println("You won "+win+" times");
 		float winp = (win/totalGambles)*100;
 		System.out.println("Win percent%"+winp);
 		float lossp = (loss/totalGambles)*100;
 		System.out.println("Loss percent%"+lossp);
-		
+
 	}
 
-	public static void anagram(String s1, String s2)
+	/**
+	 * @param firstString
+	 * @param secondString
+	 * This method displays whether two given strings are
+	 * anagrams of each other or not.
+	 */
+	public static void anagram(String firstString, String secondString)
 	{
-		        // first we convert both strings to a character array
-				// you can even read directly into a character array if you wish
-				char[] first = s1.toCharArray();
-				char[] second = s2.toCharArray();
-				
-				// we will first sort both arrays
-				Arrays.sort(first);
-				Arrays.sort(second);
-				
-				
-				// convert them back to string
-				s1 = new String(first);
-				s2 = new String(second);
-				
-				// after sorting if both are anagrams then both will contain same characters in same order now!
-				if(s1.equals(s2))
-				{
-					System.out.println("Yes. They are anagrams of each other");
-				}
-				else
-				{
-					System.out.println("No. They are not anagrams of each other");
-				}
+		// first we convert both strings to a character array
+		// you can even read directly into a character array if you wish
+		char[] first = firstString.toCharArray();
+		char[] second = secondString.toCharArray();
+
+		// we will first sort both arrays
+		Arrays.sort(first);
+		Arrays.sort(second);
+
+
+		// convert them back to string
+		firstString = new String(first);
+		secondString = new String(second);
+
+		// after sorting if both are anagrams then both will contain same characters in same order now!
+		if(firstString.equals(secondString))
+		{
+			System.out.println("Yes. They are anagrams of each other");
+		}
+		else
+		{
+			System.out.println("No. They are not anagrams of each other");
+		}
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.aceprogrammer.basics.Utilities;
+package com.aceprogrammer.basics.utilities;
 
 public class StopWatch {
 

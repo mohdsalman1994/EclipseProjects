@@ -1,4 +1,4 @@
-package com.aceprogrammer.basics.BankCounter;
+package com.aceprogrammer.basics.bankCounter;
 
 import java.util.Scanner;
 
