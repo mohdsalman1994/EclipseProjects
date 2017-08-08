@@ -8,17 +8,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class HashMapManager {
 
-	// our main game
+	// this is used to contain our hashmap
 	Map<Integer, List<Integer>> map;
+	
+	// This is used for storing and retrieving the map using serialzation
 	HashMapSerializer serializer = new HashMapSerializer();
 
+	/**
+	 * @param no i.e. the number to be inserted
+	 * @throws FileNotFoundException
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 * This method uses hashing function as
+	 * no % 11 , using 11 slots having keys
+	 * from 0 to 10 and the values as the numbers provided by input.
+	 * If the no is present in our map then it is removed 
+	 * else it is inserted in the appropriate position.
+	 */
 	public void insert(int no) throws FileNotFoundException, ClassNotFoundException, IOException
 	{
-
-		// add null check maybe?
-
+		
 		// first retrieve the map from serialized file
 
 		// this is to handle empty file 
@@ -74,6 +89,13 @@ public class HashMapManager {
 
 	}
 
+	/**
+	 * @return Map<Integer, List<Integer>>
+	 * @throws FileNotFoundException
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 * This method returns a HashMap. 
+	 */
 	public Map<Integer, List<Integer>> getMap() throws FileNotFoundException, ClassNotFoundException, IOException
 	{
 		return serializer.deSerialize();

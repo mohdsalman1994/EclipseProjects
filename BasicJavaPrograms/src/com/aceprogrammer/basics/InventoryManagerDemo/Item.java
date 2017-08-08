@@ -1,5 +1,9 @@
 package com.aceprogrammer.basics.InventoryManagerDemo;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class Item {
 	
 	private String name;

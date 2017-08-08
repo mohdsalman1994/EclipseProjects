@@ -1,18 +1,29 @@
-package com.aceprogrammer.basics.LinkedList;
+package com.aceprogrammer.basics.utilities;
 
-
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class UnorderedLinkedList {
+	
 
-	StringNode p = null;	
+	
+	private StringNode p = null;
+	
+	// used to count total nodes in our Linked List
 	int count = 0;
 	
-	void append(String value)
+	/**
+	 * @param value i.e. the value to be appended in the list
+	 * This method appends the given string at the end of the list.
+	 */
+	public void append(String value)
 	{		
 		StringNode q;
 		
 		StringNode temp = new StringNode();
-		temp.data = value;
-		temp.link = null;
+		temp.setData(value);
+		temp.setLink(null);
 		
 		if(p == null)
 		{
@@ -26,12 +37,12 @@ public class UnorderedLinkedList {
 		{
 			q = p;
 			
-			while(q.link!= null)
+			while(q.getLink()!= null)
 			{
-				q = q.link;
+				q = q.getLink();
 			}
 			
-			q.link = temp;
+			q.setLink(temp);
 			count++;
 			
 			
@@ -40,7 +51,10 @@ public class UnorderedLinkedList {
 	}
 	
 	
-	void display()
+	/**
+	 * Displays all the nodes of the linked list
+	 */
+	public void display()
 	{
 		StringNode q;
 		q = p;
@@ -54,14 +68,19 @@ public class UnorderedLinkedList {
 			
 			while(q!= null)
 			{
-				System.out.print(q.data+" ");
-				q = q.link;
+				System.out.print(q.getData()+" ");
+				q = q.getLink();
 			}
 		System.out.println();
 	}
 	
 	
-	void insert(String value)
+	/**
+	 * @param value i.e. the value to be inserted in the list
+	 * Tries to insert the given value if not present in the list.
+	 * Removes the given value if already present.
+	 */
+	public void insert(String value)
 	{						
 		
 		StringNode q, old;
@@ -70,27 +89,22 @@ public class UnorderedLinkedList {
 		q=p;
 		old = p;
 				
-//					
-//		if(q== null)
-//		{		 
-//		 append(value);
-//		}
 		if(q!= null)
 		{
 			
 			while(q!= null)
 			{
 								
-				if(q.data.equals(value))
+				if(q.getData().equals(value))
 				{
 					if(q == p)
 					{
-						q = q.link;
+						q = q.getLink();
 						found = true;
 					}
 					else
 					{
-					old.link = q.link;
+					old.setLink(q.getLink());
 					found = true;
 					q = null;
 					}
@@ -101,7 +115,7 @@ public class UnorderedLinkedList {
 				else
 				{					
 					old = q;
-					q=q.link;
+					q=q.getLink();
 				}
 			} // end while
 		}
@@ -116,6 +130,11 @@ public class UnorderedLinkedList {
 		
 	}
 	
+	/**
+	 * @return array of Strings
+	 * @throws RuntimeException
+	 * This method converts our Linked List to an Array of Strings
+	 */
 	public String[] toWordArray() throws RuntimeException
 	{
 		if(count == 0)
@@ -131,8 +150,8 @@ public class UnorderedLinkedList {
 			int i = 0;
 			while(q!= null)
 			{
-				words[i] = q.data;
-				q = q.link;
+				words[i] = q.getData();
+				q = q.getLink();
 				i++;
 			}
 			

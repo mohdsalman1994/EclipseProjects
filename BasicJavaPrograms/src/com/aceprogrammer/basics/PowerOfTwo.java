@@ -6,8 +6,18 @@ import java.io.InputStreamReader;
 
 import com.aceprogrammer.basics.utilities.MyUtilities;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class PowerOfTwo {
 
+	/**
+	 * @param args
+	 * @throws IOException
+	 * This app generates the power of two uptil 2^n
+	 * where -31 < n < 31 and n is the input given by the user
+	 */
 	public static void main(String[] args)throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Let's play with the power of 2");

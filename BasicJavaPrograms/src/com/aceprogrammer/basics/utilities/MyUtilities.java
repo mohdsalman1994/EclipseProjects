@@ -2,15 +2,21 @@ package com.aceprogrammer.basics.utilities;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MyUtilities {
 
 
-	public static double factorial(double num)
+	/**
+	 * @param number i.e. the number whose factorial is to be calculated
+	 * @return the factorial for the given input
+	 */
+	public static double factorial(double number)
 	{
 
 		double fact = 1;
-		for (double i = 1; i <= num; i++) {
+		for (double i = 1; i <= number; i++) {
 			fact = fact * i;
 		}
 		return fact;		
@@ -54,6 +60,11 @@ public class MyUtilities {
 				}
 	}
 
+	/**
+	 * @param n
+	 * This method calculates the power of two
+	 * and displays the result for each power.
+	 */
 	public static void powerOfTwo(int n)
 	{		
 		int i = 0;
@@ -203,6 +214,177 @@ public class MyUtilities {
 		{
 			System.out.println("No. They are not anagrams of each other");
 		}
+	}
+
+	/**
+	 * @param sourceString i.e. the original string which is to be modified
+	 * @param searchString i.e. the pattern or string to be found
+	 * @param replaceString i.e. the string to replace the searchString if found
+	 * @return modified sourceString if search string is replaced else
+	 * return the sourceString untouched. 
+	 */
+	public static String searchAndReplace(String sourceString, String searchString,String replaceString)
+	{
+		Pattern pattern = Pattern.compile(searchString);
+		Matcher matcher = pattern.matcher(sourceString);
+
+		if(matcher.find())
+		{
+			return sourceString.replace(sourceString.substring(matcher.start(), matcher.end()), replaceString);
+		}
+		else
+			return sourceString;
+	}
+
+	/**
+	 * @param array i.e. the list of nos to be searched for triplets
+	 * @param tripletSum i.e. the sum to be satisfied by triplets from the given array.
+	 */
+	public static void calculateTriplets(int[] array, int tripletSum) {
+
+		int sum = 0;
+
+		for (int i = 0; i < array.length - 2; i++) {
+
+			for (int j = i+1; j < array.length - 1; j++) {
+
+				for (int k = j+ 1; k < array.length; k++) {
+					sum = array[i] + array[j] + array[k];
+					if(sum == tripletSum)
+					{
+						System.out.println(array[i] + " " + array[j] + " "+ array[k]);
+					}
+				}
+			}
+		}
+	}
+	
+	/**
+	 * @param array i.e. the array from which to be searched
+	 * @param key i.e. the value which is to be search
+	 * @return
+	 */
+	public static int binarySearch(int[] array, int key)
+	{
+		int result = Arrays.binarySearch(array, key);
+		return result;
+	}
+	
+	
+	public static int binarySearch(String[] array, String key)
+	{
+		int result = Arrays.binarySearch(array, key);
+		return result;
+	}
+
+	public static void bubbleSort(int[] array)
+	{
+		// sort the array first
+		for (int i = 0; i < array.length - 1; i++) {
+			for (int j = 0; j < array.length - i -1; j++) {
+				if(array[j] > array[j+1])
+				{
+					int temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+					
+				}
+			}
+		}
+		
+		// display the sorted array
+		displaySortedArray(array);
+		
+		
+	}
+	
+	public static void bubbleSort(String[] array)
+	{
+		// sort the array first
+		for (int i = 0; i < array.length - 1; i++) {
+            for (int j= 0; j < array.length - i -1; j++) {
+                if(array[j+1].compareTo(array[j])<0) {
+                   String tempStr = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tempStr;
+                }
+            }
+        }
+		
+		// display the sorted array
+		displaySortedArray(array);
+		
+	}
+	
+	public static void displaySortedArray(int[] array)
+	{
+		for (int i : array) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+	}
+	
+	public static void displaySortedArray(String[] array)
+	{
+		for (String i : array) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		
+	}
+	
+	public static void insertionSort(int[] array)
+	{
+		// sort the array first
+		for(int i = 1; i < array.length; i++)
+		{
+			// one pivotal element to start comparision or also the upcoming element
+			// which will need to be put in the appropiate position to keep the elements sorted
+			int key = array[i];
+			
+			int j = i-1;
+			
+			// keep shifting elements until the right position is found
+			while( j >= 0 && array[j] > key)
+			{
+				array[j+1] = array[j];
+				j = j - 1;
+			}
+			// since j will be one less than the position at which
+			// we need to insert the key element we insert at j+1
+			array[j+1] = key;
+		}
+		
+		// display the sorted array
+		displaySortedArray(array);
+	}
+	
+	public static void insertionSort(String[] array)
+	{
+		// sort the array first
+		for(int i = 1; i < array.length; i++)
+		{
+			// one pivotal element to start comparision or also the upcoming element
+			// which will need to be put in the appropiate position to keep the elements sorted
+			String key = array[i];
+			
+			int j = i-1;
+			
+			// keep shifting elements until the right position is found
+			while( j >= 0 && array[j].compareTo(key)>0)
+			{
+				array[j+1] = array[j];
+				j = j - 1;
+			}
+			// since j will be one less than the position at which
+			// we need to insert the key element we insert at j+1
+			array[j+1] = key;
+		}
+		
+		// display the sorted array
+		displaySortedArray(array);
+		
+		
 	}
 
 }

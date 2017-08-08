@@ -12,6 +12,13 @@ public class MyHashMapDemo {
 	HashMapManager hashMapManager = new HashMapManager();
 	Map<Integer, List<Integer>> map;
 
+	/**
+	 * @param args
+	 * @throws FileNotFoundException in case of any File related errors
+	 * @throws ClassNotFoundException in case of exceptions while serializing/deserialzing
+	 * @throws IOException
+	 * This app simulates a hashing function.
+	 */
 	public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, IOException {
 		
 		System.out.println("Get ready for some #Map #Fun");
@@ -56,12 +63,25 @@ public class MyHashMapDemo {
 		}
 	}
 	
-	private void insert(int i) throws FileNotFoundException, ClassNotFoundException, IOException
+	/**
+	 * @param number i.e. number to be inserted in the HashMap
+	 * @throws FileNotFoundException
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 */
+	private void insert(int number) throws FileNotFoundException, ClassNotFoundException, IOException
 	{
-		hashMapManager.insert(i);
+		hashMapManager.insert(number);
 		
 	}
 	
+	/**
+	 * @throws FileNotFoundException
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 * This method displays the hash map
+	 * in the form of key value pairs.
+	 */
 	private void display() throws FileNotFoundException, ClassNotFoundException, IOException
 	{
 		// retrieve the map
@@ -79,28 +99,7 @@ public class MyHashMapDemo {
 			}
 			System.out.println();
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
 		
 	}
 

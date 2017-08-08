@@ -5,12 +5,20 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class UnorderedLinkedListDemo {
-	
-	String filePath = "src/resources/uLinkedListFeeder.txt";
-	
-	UnorderedLinkedList uList;
+import com.aceprogrammer.basics.utilities.UnorderedLinkedList;
 
+public class UnorderedLinkedListDemo {
+
+	// the filepath which will be used to fill our Linked List initially with some nos 
+	private String filePath = "src/resources/uLinkedListFeeder.txt";
+	
+	UnorderedLinkedList unOrderedLinkedList;
+
+	/**
+	 * @param args
+	 * @throws IOException
+	 * This app is used to simulate an UnOrderedList
+	 */
 	public static void main(String[] args) throws IOException {
 		
 		UnorderedLinkedListDemo uDemo = new UnorderedLinkedListDemo();
@@ -64,10 +72,18 @@ public class UnorderedLinkedListDemo {
 		uDemo.saveFileOnExit();
 
 	}
+	
+	// made these methods inside the app since our main method which is static cannot
+	// access non static reference of our UnOrderedLinkedList.
 
+	/**
+	 * @throws IOException
+	 * This method is used to populate our Unordered Linked List
+	 * from the filepath
+	 */
 	private void populate() throws IOException {
 		
-		uList = new UnorderedLinkedList();
+		unOrderedLinkedList = new UnorderedLinkedList();
 		
 		WordReaderWriter wReader = new WordReaderWriter();
 		
@@ -77,27 +93,39 @@ public class UnorderedLinkedListDemo {
 		
 		for(String word: wordList)
 		{
-			uList.append(word);
+			unOrderedLinkedList.append(word);
 		}
 		
-		uList.display();
+		unOrderedLinkedList.display();
 	}
 	
+	/**
+	 
+	 * @param word
+	 * This method tries to add a word to our linked list
+	 */
 	private void addToList(String word)
 	{
-		uList.insert(word);
+		unOrderedLinkedList.insert(word);
 	}
 	
+	/**
+	 * This method displays our linked list
+	 */
 	private void display()
 	{
-		uList.display();
+		unOrderedLinkedList.display();
 	}
 	
+	/**
+	 * @throws IOException
+	 * This method saves our list in the file located by filepath
+	 */
 	private void saveFileOnExit() throws IOException
 	{
 		WordReaderWriter writer = new WordReaderWriter();
 		
-		String[] words = uList.toWordArray();
+		String[] words = unOrderedLinkedList.toWordArray();
 		List<String> wordList = Arrays.asList(words);
 		writer.writeWordList(wordList, filePath);
 	}

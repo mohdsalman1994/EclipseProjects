@@ -25,7 +25,12 @@ public class PalindromeQueue {
 	}
 	
 	
-	// the function who does all the magic
+	
+	/**
+	 * This function checks whether the given string is
+	 * palindrome or not and displays the result in
+	 * the output.
+	 */
 	public void check() 
 	{
 		

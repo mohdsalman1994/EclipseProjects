@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import com.aceprogrammer.basics.utilities.MyUtilities;
 
 /**
- * @author bridgeit
+ * @author Salman Shaikh
  * 
  * This app is used to test Strings for Anagram
  *

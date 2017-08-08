@@ -1,5 +1,9 @@
 package com.aceprogrammer.basics.bankCounter;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class Customer {
 	
 	private int id;	

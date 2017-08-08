@@ -13,12 +13,17 @@ import org.json.simple.parser.ParseException;
 
 public class InventoryManager {
 	
+	// collection of inventory items
 	List<Item> inventoryList;
 	
 	// the path where the json file is stored
 	String filePath = "src/resources/inventory.json";
 
 	
+	/**
+	 * We read the inventory from the JSON file and
+	 * populate our Inventory List.
+	 */
 	public InventoryManager()
 	{
 		
@@ -64,6 +69,9 @@ public class InventoryManager {
 		
 	}
 	
+	/**
+	 * This method displays our inventory
+	 */
 	public void displayInventory()
 	{
 		System.out.printf("%-10s \t %-5s \t %-5s\n","Name", "weight", "price");

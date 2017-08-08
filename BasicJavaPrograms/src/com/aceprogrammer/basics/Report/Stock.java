@@ -1,5 +1,9 @@
 package com.aceprogrammer.basics.Report;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class Stock {
 	
 	private String name;
@@ -40,6 +44,9 @@ public class Stock {
 	}
 	
 	
+	/**
+	 * @return the total value of all the shares for the given Stock
+	 */
 	public float calculateValue()
 	{
 		int quantity = getQuantity();

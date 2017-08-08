@@ -1,14 +1,24 @@
-package com.aceprogrammer.basics;
+package com.aceprogrammer.basics.utilities;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+/**
+ * @author Salman Shaikh
+ * This enum contains two constants
+ * one for the player and computer.
+ *
+ */
 enum WhoseTurn
 {
 	PLAYER, COMPUTER;
 }
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class TicTacToe
 {
 
@@ -23,25 +33,32 @@ public class TicTacToe
 	static int columns = 3;
 	static int tmove = 9;
 
+	// start the game with player's turn
 	WhoseTurn whoseTurn = WhoseTurn.PLAYER;
 
+	// this is used to choose a random cell simulating a computer
 	Random random = new Random();
 
+	
+	/**
+	 * @param args 
+	 */
 	public static void main(String args[]) {
 
 
-
-		TicTacToe ticTacToe = new TicTacToe(rows, columns, tmove);		
+		TicTacToe ticTacToe = new TicTacToe();		
 		ticTacToe.play();
 	}
 
 
-
-
-	public TicTacToe(int rows, int columns, int nMoves) {
+	/**
+	 * Initialize our Tic Tac Toe board with empty characters before
+	 * the game starts.
+	 */
+	public TicTacToe() {
 		board = new char[rows] [columns];
 
-		moves = new boolean[nMoves];
+		moves = new boolean[tmove];
 
 
 		// initialize the board with empty character
@@ -55,6 +72,9 @@ public class TicTacToe
 
 
 
+	/**
+	 * This method shows the current status of the board.
+	 */
 	private void showBoard()
 	{
 		System.out.printf("\t %c \t | \t %c \t | \t %c \n\n ",board[0][0],
@@ -67,6 +87,11 @@ public class TicTacToe
 				board[2][1], board[2][2] );
 	}
 
+	/**
+	 * This method shows the instructions
+	 * on how to choose a cell during
+	 * the game.
+	 */
 	private void showInstructions()
 	{
 		System.out.println("\t\t\t  Tic-Tac-Toe\n\n");
@@ -79,8 +104,11 @@ public class TicTacToe
 		System.out.println("\t 7 \t | \t 8 \t | \t 9  \n");
 
 	}
-
-	// function to check who's the winner
+	
+	/**
+	 * This method declares the winner of the game
+	 * when the winning condition is satisfied. 
+	 */
 	private void declareWinner()
 	{
 
@@ -94,7 +122,11 @@ public class TicTacToe
 
 	}
 
-	// function to check whether rows are crossed
+	
+	/**
+	 * @return whether any of the rows
+	 * are filled by consecutive X's or O's 
+	 */
 	private boolean rowCrossed()
 	{
 		for (int i = 0; i < rows ; i++) {
@@ -107,6 +139,10 @@ public class TicTacToe
 		return(false);
 	}
 
+	/**
+	 * @return whether any of the columns
+	 * are filled by consecutive X's or O's 
+	 */
 	private boolean columnCrossed()
 	{
 		for (int i = 0; i < columns ; i++) {
@@ -119,6 +155,10 @@ public class TicTacToe
 		return(false);
 	}
 
+	/**
+	 * @return whether any of the diagnols
+	 * are filled by consecutive X's or O's 
+	 */
 	private boolean diagonalCrossed()
 	{
 		if (board[0][0] == board[1][1] &&
@@ -135,12 +175,18 @@ public class TicTacToe
 	}
 
 
+	/**
+	 * @return whether any player won the game or not.
+	 */
 	private boolean gameOver()
 	{
 		return(rowCrossed() || columnCrossed() || diagonalCrossed());
 	}
 
-	private void play() {
+	/**
+	 * Play the game.
+	 */
+	public void play() {
 
 		int movesPlayed = 0;
 

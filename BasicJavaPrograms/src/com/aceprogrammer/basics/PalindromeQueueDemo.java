@@ -6,8 +6,18 @@ import java.io.InputStreamReader;
 
 import com.aceprogrammer.basics.utilities.PalindromeQueue;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class PalindromeQueueDemo {
 
+	/**
+	 * @param args
+	 * @throws IOException
+	 * This app checks whether the String entered by user 
+	 * is a palindrome or not
+	 */
 	public static void main(String[] args)throws IOException {
 	
 	System.out.println("Enter the string to be checked");

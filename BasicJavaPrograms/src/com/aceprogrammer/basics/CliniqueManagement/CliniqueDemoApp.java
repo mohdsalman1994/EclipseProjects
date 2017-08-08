@@ -3,8 +3,17 @@ package com.aceprogrammer.basics.CliniqueManagement;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class CliniqueDemoApp {
 	
+	/**
+	 * @param args
+	 * @throws IOException
+	 * This app simulates a Clinique Management System
+	 */
 	public static void main(String[] args) throws IOException {
 		
 		System.out.println("This is a an app to demonstrate Clinique Management");
@@ -123,6 +132,7 @@ public class CliniqueDemoApp {
 		
 		}
 		
+		//save the appointments in the file
 		cManager.saveAppointments();
 		
 	}

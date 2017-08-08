@@ -1,12 +1,22 @@
-package com.aceprogrammer.basics.LinkedList;
+package com.aceprogrammer.basics.utilities;
 
-
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class OrderedLinkedList {
 
-	IntegerNode p = null;	
-	int count = 0;
+	// the node of Linked List	
+	private IntegerNode p = null;
+	
+	// used to keep count of total nodes in the linked list
+	private int count = 0;
 	
 	
+	/**
+	 * @param args
+	 * This app is used to simulate an Ordered Linked List
+	 */
 	public static void main(String[] args) {
 		int[] test = { 55, 22, 13, 34, 18};
 		OrderedLinkedList ol = new OrderedLinkedList();
@@ -18,14 +28,19 @@ public class OrderedLinkedList {
 	}
 	
 	
-	void append(int value)
+	/**
+	 * @param value i.e. the value to be appended
+	 * This method appends a node with the given value
+	 * in the linked list.
+	 */
+	public void append(int value)
 	{		
 		IntegerNode q;
 		IntegerNode next;
 		
 		IntegerNode temp = new IntegerNode();
-		temp.data = value;
-		temp.link = null;
+		temp.setData(value);
+		temp.setLink(null);
 		
 		
 		// the list is empty
@@ -38,11 +53,11 @@ public class OrderedLinkedList {
 		else
 			
 			// if the given value is less than the first value
-			if(value <= p.data)
+			if(value <= p.getData())
 			{
 				
 				System.out.println("Less than first value");
-				temp.link = p;
+				temp.setLink(p);
 				p = temp;
 			}
 		
@@ -50,24 +65,24 @@ public class OrderedLinkedList {
 		{
 			boolean ins = false;
 			q = p;
-            next = p.link;
+            next = p.getLink();
             while(next != null && ins == false)
             {
-                if (value > q.data && value < next.data)
+                if (value > q.getData() && value < next.getData())
                 {
-                    q.link =temp;
-                    temp.link=next;
+                    q.setLink(temp);
+                    temp.setLink(next);
                     ins = true;                    
                 }
                 else
                 {
                     q = next;
-                    next = next.link;
+                    next = next.getLink();
                 }
             }
             if (ins == false)
             {
-                q.link = temp;
+                q.setLink(temp);
             }
 		}
 		
@@ -76,7 +91,11 @@ public class OrderedLinkedList {
 	}
 	
 	
-	void display()
+	/**
+	 * This method displays all the nodes in
+	 * the linked list.
+	 */
+	public void display()
 	{
 		IntegerNode q;
 		q = p;
@@ -90,14 +109,21 @@ public class OrderedLinkedList {
 			
 			while(q!= null)
 			{
-				System.out.print(q.data+" ");
-				q = q.link;
+				System.out.print(q.getData()+" ");
+				q = q.getLink();
 			}
 		System.out.println();
 	}
 	
 	
-	void insert(int value)
+	/**
+	 * @param value i.e. the value to be inserted
+	 * This method tries to insert the given value
+	 * if the value is not already present.
+	 * If the value is already present, then
+	 * it is removed from the list.
+	 */
+	public void insert(int value)
 	{						
 		
 		IntegerNode q, old;
@@ -112,16 +138,16 @@ public class OrderedLinkedList {
 			while(q!= null)
 			{
 								
-				if(q.data == value)
+				if(q.getData() == value)
 				{
 					if(q == p)
 					{
-						q = q.link;
+						q = q.getLink();
 						found = true;
 					}
 					else
 					{
-					old.link = q.link;
+					old.setLink(q.getLink());
 					found = true;
 					q = null;
 					}
@@ -132,7 +158,7 @@ public class OrderedLinkedList {
 				else
 				{					
 					old = q;
-					q=q.link;
+					q=q.getLink();
 				}
 			} // end while
 		}
@@ -147,7 +173,11 @@ public class OrderedLinkedList {
 		
 	}
 	
-	public int[] toIntegerArray() throws RuntimeException
+	/**
+	 * @return an array of integers
+	 * used to convert our list to array of integers. 
+	 */
+	public int[] toIntegerArray()
 	{
 		if(count == 0)
 		{
@@ -163,8 +193,8 @@ public class OrderedLinkedList {
 			int i = 0;
 			while(q!= null)
 			{
-				words[i] = q.data;
-				q = q.link;
+				words[i] = q.getData();
+				q = q.getLink();
 				i++;
 			}
 			

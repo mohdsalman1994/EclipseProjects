@@ -1,5 +1,9 @@
 package com.aceprogrammer.basics.bankCounter;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class Transaction {
 	
 	private int customerId;
@@ -8,6 +12,11 @@ public class Transaction {
 	
 	private int transAmount;
 
+	/**
+	 * @param customerId
+	 * @param transType i.e. Deposit or Withdraw
+	 * @param transAmount i.e. the amount to be deposited or withdrawed
+	 */
 	public Transaction(int customerId, TransactionType transType, int transAmount) {
 		
 		this.customerId = customerId;

@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class ReportGenerator {
 	
-	
+	// variable to hold the collection of Stocks
 	private StockPortfolio sp;
 	
 	public ReportGenerator() throws FileNotFoundException, IOException {
@@ -16,6 +20,12 @@ public class ReportGenerator {
 	}
 	
 
+	/**
+	 * @param args
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * This app is used to generate Stock Report.
+	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		
 		
@@ -31,6 +41,9 @@ public class ReportGenerator {
 	
 	
 	
+	/**
+	 * starts the report generation
+	 */
 	private void executeReport() {
 		
 		
@@ -41,7 +54,7 @@ public class ReportGenerator {
 		{
 		 i = sc.nextInt();
 		}
-		if(i == sp.stockList.size() + 1)
+		if(i == sp.getStockList().size() + 1)
 		{
 			generateTotalReport();
 		}
@@ -51,9 +64,13 @@ public class ReportGenerator {
 	}
 
 
-	public void generateIndividualReport(int i)
+	/**
+	 * @param no i.e. the option/ type of report to be generated
+	 * This method generates a report for a single company.
+	 */
+	public void generateIndividualReport(int no)
 	{
-		Stock stock = sp.getStockPortfolios().get(i - 1);
+		Stock stock = sp.getStockPortfolios().get(no - 1);
 		
 		String name = stock.getName();
 		float value = stock.calculateValue();
@@ -65,6 +82,9 @@ public class ReportGenerator {
 		System.out.printf("%d  \t %-15s \t %-15f \t %-15d \t %f\n", 1 , name , price, quantity, value);
 	}
 	
+	/**
+	 * This method generates reports listing
+	 */
 	public void generateTotalReport()
 	{
 		List<Stock> stockList = sp.getStockPortfolios();		
@@ -88,6 +108,9 @@ public class ReportGenerator {
 		System.out.printf("%d  \t %-15s \t %f\n", index, "Total" , total);
 	}
 	
+	/**
+	 * Display different choices for the user to select the type of report to be generated.
+	 */
 	public void displayMenu()
 	{
 		System.out.println("Stock Report Generator");

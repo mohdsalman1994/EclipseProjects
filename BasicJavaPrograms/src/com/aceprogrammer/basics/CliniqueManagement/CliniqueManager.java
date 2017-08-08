@@ -231,11 +231,5 @@ public class CliniqueManager {
 			filterDoctorById(dId);
 		}
 	}
-		
-	
-	public static void main(String[] args) throws IOException {
-		CliniqueManager cManager = new CliniqueManager();
-		//cManager.filterPatientByName("Satyendra");
-		cManager.filterPatientByAge(25);
-	}
+				
 }

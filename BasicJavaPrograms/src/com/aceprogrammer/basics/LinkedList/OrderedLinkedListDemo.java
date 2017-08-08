@@ -5,12 +5,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.aceprogrammer.basics.utilities.OrderedLinkedList;
+
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class OrderedLinkedListDemo {
 	
-	String filePath = "src/resources/oLinkedListFeeder.txt";
+	// used to populate our linked list initially with some values
+	private String filePath = "src/resources/oLinkedListFeeder.txt";
 	
-	OrderedLinkedList oList;
+	private OrderedLinkedList oList;
 
+	/**
+	 * @param args
+	 * @throws IOException
+	 * This app simulates an Ordered Linked List
+	 */
 	public static void main(String[] args) throws IOException {
 		
 		OrderedLinkedListDemo uDemo = new OrderedLinkedListDemo();
@@ -65,6 +77,10 @@ public class OrderedLinkedListDemo {
 
 	}
 
+	/**
+	 * @throws IOException
+	 * This method populates our linked list from the linkedlistfeeder file
+	 */
 	private void populate() throws IOException {
 		
 		oList = new OrderedLinkedList();
@@ -83,16 +99,27 @@ public class OrderedLinkedListDemo {
 		// oList.display();
 	}
 	
+	/**
+	 * @param no i.e. the number to be added to the list
+	 */
 	private void addToList(int no)
 	{
 		oList.insert(no);
 	}
 	
+	/**
+	 * This method displays the Linked List
+	 */
 	private void display()
 	{
 		oList.display();
 	}
 	
+	/**
+	 * @throws IOException
+	 * This method saves our Linked List into a file located
+	 * by filepath variable.
+	 */
 	private void saveFileOnExit() throws IOException
 	{
 		WordReaderWriter writer = new WordReaderWriter();

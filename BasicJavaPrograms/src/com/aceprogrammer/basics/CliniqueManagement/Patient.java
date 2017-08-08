@@ -1,5 +1,9 @@
 package com.aceprogrammer.basics.CliniqueManagement;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class Patient {
 	
 	private int id;

@@ -9,11 +9,21 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class HashMapSerializer{
 	
+	// The path where our hashmap will be stored
 	public String filePath = "src/resources/myHashMap.dat";
 	
-	// this mehtod serializes given map and stores it in a file
+	/**
+	 * @param map
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * This mehtod serializes given map and stores it in a file.
+	 */
 	public void serialize(Map<Integer, List<Integer>> map) throws FileNotFoundException, IOException
 	{
 		MyHashMap myHashMap = new MyHashMap(map);
@@ -24,6 +34,14 @@ public class HashMapSerializer{
 	}
 	
 	
+	/**
+	 * @return Map<Integer, List<Integer>> i.e. the HashMap
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 * This method deserialzes the HashMap from the filePath
+	 * and returns the Map.
+	 */
 	public Map<Integer, List<Integer>> deSerialize() throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath)))

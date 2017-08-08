@@ -1,3 +1,21 @@
-This file is being used to feed our hungry linked list programs.
-Feel free to add your own stuff for testing.
+This
+file
+is
+being
+used
+to
+feed
+hungry
+linked
+list
+programs.
+Feel
+free
+to
+add
+your
+own
+stuff
+for
+testing.
 Enjoy.

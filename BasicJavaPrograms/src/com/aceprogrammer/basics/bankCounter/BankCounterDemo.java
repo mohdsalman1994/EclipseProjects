@@ -2,18 +2,32 @@ package com.aceprogrammer.basics.bankCounter;
 
 import java.util.Scanner;
 
+/**
+ * @author Salman Shaikh
+ *
+ */
 public class BankCounterDemo {
 
+	/**
+	 * @param args
+	 * This app simulates a bank counter.
+	 * It checks whether the transactions done by Customers
+	 * standing in the queue either leave sufficient balance
+	 * in the bank or empty the cash at the cash counter.
+	 */
 	public static void main(String[] args) {
 		
+		// Total no of Customers standing in the queue
+		// can be changed as required
 		int noOfCustomers = 3;
+		
+		// Initial Bank Balance
+		// can be changed as required
 		int bankBalance = 10000;
 		
 		// initalize the bank with some balance and a predefined no of customers
 		Bank bank = new Bank(noOfCustomers, bankBalance);
-						
-		// using common sense show each customer their balance first and then ask further details
-		
+										
 		try(Scanner sc = new Scanner(System.in))
 		{
 		for(int i = 0; i < noOfCustomers; i++)
@@ -28,7 +42,7 @@ public class BankCounterDemo {
 			System.out.println("2.Withdrawal");
 			
 			
-				
+				// ask the user whether he wants to deposit or withdraw
 				int type = sc.nextInt();
 				TransactionType transType;
 				
